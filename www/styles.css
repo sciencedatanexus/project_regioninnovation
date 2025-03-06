@@ -1,0 +1,23 @@
+.transparent-iframe {
+    background: transparent;
+}
+
+#main_controls {
+  /* Appearance */
+  background-color: white;
+  padding: 0 10px 10px 10px;
+  cursor: move;
+  /* Fade out while not hovering */
+  opacity: 0.55;
+  zoom: 0.9;
+  transition: opacity 500ms 1s;
+}
+
+#poc_warning {
+  /* Appearance */
+  background-color: white;
+  padding: 0 10px 10px 10px;
+  cursor: move;
+  color: #ff4500; /* Brighter color for text */
+  border: 2px solid #045a8d; /* Adding a border */
+}

@@ -1,0 +1,1 @@
+Results refer to what is produced by a scientific activity, generally new knowledge. This is typically captured by the production of scholarly publications (e.g. scientific papers, conferences).  Research results provide a lot of insignths about what is researched, the key actors in the sector as well as the relationships between these actors (eg. collaborations).

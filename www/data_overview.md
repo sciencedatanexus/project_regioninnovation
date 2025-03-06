@@ -1,0 +1,1 @@
+For each Source, Data was extracted with the listed search strategies:

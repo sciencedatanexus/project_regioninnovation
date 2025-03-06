@@ -1,0 +1,7 @@
+# transfer of files to and from EC2 and S3
+Write-S3Object -BucketName sciencedatanexus -File 	/Users/jfd/Documents/sciencedatanexus/data/project_regioninnovation.zip	 -Key	data/project_regioninnovation/project_regioninnovation.zip
+# transfer of files  from S3 TO EC2
+Copy-S3Object -BucketName sciencedatanexus -Key data/project_regioninnovation/project_regioninnovation.zip -LocalFile /Users/jfd/Documents/sciencedatanexus/data\project_regioninnovation.zip
+
+
+

@@ -1,0 +1,189 @@
+lens_scholarly:
+  main:
+    topics:
+      - topic_1:
+            name: Lens Topic 1
+            value: {
+                    "bool": {
+                        "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                            {"bool": {"must":[
+                                {"match": {"publication_type": "journal article"}},
+                                {"term": {"author.affiliation.address.country_code": "AU"}},
+                                {"term": {"author.affiliation.address.state_code": "AU-VIC"}},
+                                {"match": {"field_of_study": "Internal medicine"}}
+                            ]}}
+                        ]
+                    }
+                }
+      - topic_2:
+            name: Lens Topic 2
+            value:  {
+                    "bool": {
+                        "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                            {"bool": {"must":[
+                                {"match": {"publication_type": "journal article"}},
+                                {"term": {"author.affiliation.address.country_code": "AU"}},
+                                {"term": {"author.affiliation.address.state_code": "AU-VIC"}},
+                                {"match": {"field_of_study": "Internal medicine"}}
+                            ]}}
+                        ]
+                    }
+                }
+  secondary:
+    topics:
+      - topic_1: 
+            name: Topic 1 secondary lens
+            value: {
+              "bool": {
+                  "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                      {"bool": {"must":[
+                          {"match": {"publication_type": "journal article"}},
+                          {"term": {"author.affiliation.address.country_code": "AU"}},
+                          {"term": {"author.affiliation.address.state_code": "AU-VIC"}},
+                          {"match": {"field_of_study": "Internal medicine"}}
+                      ]}}
+                  ]
+              }
+          }
+      - topic_2:
+            name: Topic 2 secondary lens
+            value:  {
+              "bool": {
+                  "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                      {"bool": {"must":[
+                          {"match": {"publication_type": "journal article"}},
+                          {"term": {"author.affiliation.address.country_code": "AU"}},
+                          {"term": {"author.affiliation.address.state_code": "AU-VIC"}},
+                          {"match": {"field_of_study": "Internal medicine"}}
+                      ]}}
+                  ]
+              }
+          }
+  aggegations: 
+    - agg_1: 
+            name: Agg 1
+            value: {
+                      "scholarly_citations": [{"cardinality": {"field": "year_published"}},{"sum": {"field": "referenced_by_count"}} ] 
+                  }
+    - agg_2: 
+            name: Agg 2
+            value: {
+                    "scholarly_citations": [{"cardinality": {"field": "year_published"}},{"sum": {"field": "referenced_by_count"}} ] 
+                }
+lens_patents:
+  main:
+    topics:
+      - topic_1: 
+            name: Topic 1
+            value: {
+                  "bool": {
+                      "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                          {"bool": {"must":[
+                              {"term": {"priority_claim.jurisdiction": "AU"}},
+                              {"bool": {"should":[
+                                  {"match": {"applicant.address": "victoria"}},
+                                  {"match": {"inventor.address": "victoria"}}
+                              ]}}
+                          ]}}
+                              
+                      ]
+                  }
+              }
+      - topic_2: 
+            name: Topic 2
+            value: {
+                  "bool": {
+                      "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                          {"bool": {"must":[
+                              {"term": {"priority_claim.jurisdiction": "AU"}},
+                              {"bool": {"should":[
+                                  {"match": {"applicant.address": "victoria"}},
+                                  {"match": {"inventor.address": "victoria"}}
+                              ]}}
+                          ]}}
+                              
+                      ]
+                  }
+              }
+  secondary:
+    topics:
+      - topic_1: 
+            name: Topic 1
+            value: {
+                  "bool": {
+                      "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                          {"bool": {"must":[
+                              {"term": {"priority_claim.jurisdiction": "AU"}},
+                              {"bool": {"should":[
+                                  {"match": {"applicant.address": "victoria"}},
+                                  {"match": {"inventor.address": "victoria"}}
+                              ]}}
+                          ]}}
+                              
+                      ]
+                  }
+              }
+      - topic_2: 
+            name: Topic 2
+            value: {
+                  "bool": {
+                      "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                          {"bool": {"must":[
+                              {"term": {"priority_claim.jurisdiction": "AU"}},
+                              {"bool": {"should":[
+                                  {"match": {"applicant.address": "victoria"}},
+                                  {"match": {"inventor.address": "victoria"}}
+                              ]}}
+                          ]}}
+                              
+                      ]
+                  }
+              }
+  aggegations: 
+    - agg_1: 
+            name: Agg 1
+            value: {
+                      "scholarly_citations": [{"cardinality": {"field": "year_published"}},{"sum": {"field": "referenced_by_count"}} ] 
+                  }
+openalex: 
+  main:
+    topics:
+      - topic_1: 
+            name: Topic 1
+            value: {
+              "bool": {
+                  "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                      {"bool": {"must":[
+                          {"match": {"publication_type": "journal article"}},
+                          {"term": {"author.affiliation.address.country_code": "AU"}},
+                          {"term": {"author.affiliation.address.state_code": "AU-VIC"}},
+                          {"match": {"field_of_study": "Internal medicine"}}
+                      ]}}
+                  ]
+              }
+          }
+      - topic_2: 
+            name: Topic 2
+            value: {
+              "bool": {
+                  "must": [{"range": {"year_published": {"gte": "2019", "lte": "2023"}}},
+                      {"bool": {"must":[
+                          {"match": {"publication_type": "journal article"}},
+                          {"term": {"author.affiliation.address.country_code": "AU"}},
+                          {"term": {"author.affiliation.address.state_code": "AU-VIC"}},
+                          {"match": {"field_of_study": "Internal medicine"}}
+                      ]}}
+                  ]
+              }
+          }
+    aggegations: 
+      - agg_1: 
+            name: Agg 1
+            value: {
+                      "scholarly_citations": [{"cardinality": {"field": "year_published"}},{"sum": {"field": "referenced_by_count"}} ] 
+                  }
+      - agg_2: 
+            name: Agg 2
+            value: {
+                    "scholarly_citations": [{"cardinality": {"field": "year_published"}},{"sum": {"field": "referenced_by_count"}} ] 
+                }

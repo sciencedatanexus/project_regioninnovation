@@ -1,0 +1,30 @@
+# Mandatory variables
+project_dev: FALSE # set to TRUE for development, FALSE for production
+project_name: project_regioninnovation
+ror_version: '2024_11'
+# Optional variables (default values apply)
+project_dir_name: project_regioninnovation
+project_start_year: 2015
+project_end_year: 2024
+project_date: 2025-01-30
+project_pipeline_version: "1_0_1"
+project_input_pipeline_version: "1_0_1" # superseeded by dev_pipeline_version in v1.1.0
+project_result_pipeline_version: "1_0_1" # superseeded by dev_pipeline_version in v1.1.0
+main_directory:
+data_directory: data
+lib_dir: nexus
+configfile: config.yaml # yaml configuration file for all access codes, for instance: "~/config.yaml"
+  # gets API credentials from a config.yaml file that has the following content:
+  # APISDN:
+  #     endpoint: https://api.ScienceDataNexus.com/api/
+  #     apikey: "[API KEY HERE]"
+baseline_version: 'baselines'
+project_variant: NULL
+# Optional development variables
+dev_lib_dir: "/Users/jfd/Documents/sciencedatanexus/code/nexus_dev/sandbox" # version of development libs
+dev_pipeline_version: "1_0_1"
+dev_input_pipeline_version: "1_0_1" # superseeded by dev_pipeline_version in v1.1.0
+dev_result_pipeline_version: "1_0_1" # superseeded by dev_pipeline_version in v1.1.0
+# Other UI variables
+project_contributors:
+  - {role: Main contributor, name: Jean-Francois Desvignes, orcid: https://orcid.org/0000-0002-0598-987X}

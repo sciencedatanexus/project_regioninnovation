@@ -1,0 +1,2 @@
+- This proof of concept was released on Thursday 6th March 2025, version 0.1.0.
+- No further updates were made since initial release.
